@@ -1,0 +1,685 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Negombo | My Hometown</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #222;
+            line-height: 1.6;
+            background: #f7fbfc;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 45, 60, 0.95);
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: rgb(222, 222, 225);
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #63d8e8;
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            background:
+                linear-gradient(rgba(0,40,55,0.45), rgba(0,40,55,0.55)),
+                url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e")
+                center/cover;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 70px;
+            letter-spacing: 5px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin: 15px 0 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #01262a;
+            color: white;
+            padding: 13px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #007f8e;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #004b5c;
+        }
+
+        .section-title p {
+            color: #666;
+            margin-top: 8px;
+        }
+
+        /* About */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .about h3 {
+            font-size: 28px;
+            color: #006779;
+            margin-bottom: 15px;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: rgb(46, 211, 216);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #00586a;
+            margin-bottom: 10px;
+.history {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url("negombo-dutch-canal.jpgs")
+
+    background-size cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+}
+        /* Places */
+        .places {
+            background: #eaf7f8;
+        }
+
+        .place-card {
+            overflow: hidden;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .place-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .place-content {
+            padding: 20px;
+        }
+
+        .place-content h3 {
+            color: #010809;
+        }
+
+        /* Challenges */
+        .challenge {
+            background: #053942;
+            color: white;
+        }
+
+        .challenge .section-title h2 {
+            color: white;
+        }
+
+        .challenge .section-title p {
+            color: #d5e9ec;
+        }
+
+        .challenge-card {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .challenge-card h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Future */
+        .future {
+            text-align: center;
+            background: #f0fafb;
+        }
+
+        .future-text {
+            max-width: 800px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        /* Footer */
+        footer {
+            background: #002d3a;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        
+
+        /* Mobile */
+        @media (max-width: 800px) {
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+       
+
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="logo">NEGOMBO</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#history">History</a></li>
+        <li><a href="#nature">Nature</a></li>
+        <li><a href="#culture">Culture</a></li>
+        <li><a href="#places">Places</a></li>
+        <li><a href="#future">Future</a></li>
+    </ul>
+</nav>
+
+
+<!-- Hero -->
+<section class="hero" id="home">
+
+    <div>
+        <h1>NEGOMBO</h1>
+
+        <p>The Little Rome in Sri Lanka</p>
+
+        <a href="#about" class="btn">
+            Explore My Hometown
+        </a>
+    </div>
+
+</section>
+
+
+<!-- About -->
+<section id="about">
+
+    <div class="section-title">
+        <h2>About Negombo</h2>
+        <p>A coastal city with a rich living heritage</p>
+    </div>
+
+    <div class="about">
+
+        <img src="67f10d0c-0788-4715-be44-43b5d99db600.jpg">
+
+        <div>
+            <h3>My Hometown</h3>
+
+                <p>
+             Welcome to Negombo, a captivating coastal city where rich history meets the laid-back rhythm of Sri Lanka’s western shores. Located just minutes away from the Bandaranaike International Airport, Negombo is often the very first—and most memorable—stop for travelers beginning their island journey. Often affectionately dubbed "Little Rome" due to its stunning array of historic churches and deep-rooted Catholic heritage, this vibrant destination seamlessly blends its colonial past under Portuguese and Dutch rule with a lively modern culture.
+Beyond its scenic sandy beaches and picturesque lagoons, Negombo pulses with authentic local life. It is home to the country's most famous traditional fishing industry, where you can witness colorful outrigger canoes set sail at dawn or experience the vibrant hustle and bustle of the legendary Lellama fish market. Whether you are seeking a relaxing seaside escape, a deep dive into centuries-old fortifications and intricate canal networks, or a taste of authentic coastal cuisine, Negombo sets the perfect stage for your Sri Lankan adventure. Dive in and discover everything this enchanting coastal haven has to offer!
+       
+                </p>
+
+    </div>
+
+</section>
+
+
+<!-- Location & Accessibility -->
+<section id="nature">
+
+    <div class="section-title">
+        <h2>Location & Accessibility</h2>
+        <p>Well connected to the rest of Sri Lanka</p>
+    </div>
+           <p>
+            Negombo is a coastal city located in the Western Province of Sri Lanka, approximately 37 km north of Colombo. Its strategic location along the western coastline has made it an important centre for tourism, fishing, trade, and local economic activities. The city is well connected to Colombo and other major urban areas through the A3 Colombo–Negombo Road and the Puttalam–Colombo railway line. Negombo is also located close to Bandaranaike International Airport, providing convenient access for international tourists and businesses. A well-developed network of buses, trains, roads, and highways supports daily movement within and beyond the city. This strong accessibility contributes to Negombo’s identity as a major coastal gateway and tourism destination in Sri Lanka.
+           </p>
+
+
+<div class="map">
+    <iframe 
+        src="https://www.google.com/maps/d/embed?mid=1dfkE1xi3J53HL8ecuMHb6mhFLz3hmIg&ehbc=2E312F&noprof=1" width="1200
+        " height="800"></iframe>
+       
+        
+    </iframe>
+</div>
+
+
+</section>
+<!-- History & Heritage -->
+<section id="history">
+    <section class="history">
+
+    <div class="section-title">
+        <h2>History & Heritage</h2>
+    </div>
+
+    <div class="history-content">
+
+        
+
+            <p>
+                Negombo has a rich and diverse history shaped by its coastal
+                location and long-standing connection with trade, fishing,
+                and maritime activities. The city experienced the influence
+                of the Portuguese, Dutch, and British colonial periods, which
+                can still be seen in its architecture, religious buildings,
+                roads, and waterways.Portuguese influence contributed strongly to the development
+                of Catholicism, and Negombo became known as one of Sri Lanka's
+                important Catholic centres. Historic churches, religious
+                festivals, and Catholic communities remain significant parts
+                of the city's cultural identity. The Dutch period introduced important infrastructure,
+                particularly the Dutch Canal, which was historically used to
+                transport goods and connect coastal settlements.During the British period, Negombo continued to develop as
+                an important commercial and transport centre. Alongside its colonial heritage, traditional fishing remains
+                a major part of Negombo's identity. Fishing communities,
+                traditional boats, the fish market, and the coastal landscape
+                represent the city's strong relationship with the sea.
+              </p>
+        </div>
+       
+
+
+        </div>
+
+</section>
+    
+    </div>
+</section>
+
+<!-- Nature -->
+<section>
+
+    <div class="section-title">
+        <h2>Nature & Environment</h2>
+        <p>The natural identity of Negombo</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🌊</div>
+            <h3>Negombo Lagoon</h3>
+            <p>
+                A major natural feature supporting fishing,
+                biodiversity and local livelihoods.
+            </p>
+            <img
+                src="C:\Users\ADMIN\Documents\UIP\UIP\Communication Technology\html\3bc78778-57e0-44b5-aac2-813be2215f12.jpg"
+                alt="Negombo Lagoon"width="300" height="300">
+        </div>
+
+        <div class="card">
+            <div class="icon">🏖️</div>
+            <h3>Coastal Environment</h3>
+            <p>
+                Beaches and coastal landscapes form an important
+                part of Negombo's identity.
+            </p>
+            <img
+                src="C:\Users\ADMIN\Downloads\Morawala-Beach-Negombo.jpg"
+                alt="Beach"width="300" height="300">
+        </div>
+
+        <div class="card">
+            <div class="icon">🌿</div>
+            <h3>Wetlands</h3>
+            <p>
+                Wetlands and mangrove ecosystems provide important
+                environmental and ecological value.
+            </p>
+            <img
+                src="C:\Users\ADMIN\Downloads\Muthurajawela-Wetland-1000x1000-1.jpg"
+                alt="wetlands="300" height="300">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Culture -->
+<section id="culture">
+
+    <div class="section-title">
+        <h2>Culture & Community</h2>
+        <p>The people who make Negombo unique</p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">⛪</div>
+            <h3>Religious Heritage</h3>
+            <img
+                src="C:\Users\ADMIN\Downloads\WhatsApp Image 2026-08-10 at 9.38.02 AM.jpeg"
+                alt="St. Mary's Church Negombo"width="300" height="300">
+            <p>
+                Churches and religious landmarks contribute strongly
+                to the cultural identity of the city.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎣</div>
+            <h3>Fishing Culture</h3>
+            <img
+                src="C:\Users\ADMIN\Downloads\negombo-fish-market-wet.jpg"
+                alt="Fishing"width="300" height="300">
+            <p>
+                Traditional fishing remains an important part of
+                Negombo's community and economy.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🍛</div>
+            <h3>Local Lifestyle</h3>
+             <img
+                src="C:\Users\ADMIN\Downloads\three-generations-negombo-market.jpg"
+                alt="Fishing"width="300" height="300">
+            <p>
+                Seafood, markets, festivals and everyday street life
+                create a distinctive local character.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Economy -->
+<section>
+
+    <div class="section-title">
+        <h2>Economy & Livelihood</h2>
+        <p>Major activities that support the city</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🎣</div>
+            <h3>Fishing</h3>
+            <p>
+                One of the traditional economic activities of Negombo.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏨</div>
+            <h3>Tourism</h3>
+            <p>
+                Hotels, restaurants and tourism services are important
+                parts of the local economy.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🏪</div>
+            <h3>Trade</h3>
+            <p>
+                Markets, shops and small businesses support local
+                employment and daily life.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Places -->
+<section class="places" id="places">
+
+    <div class="section-title">
+        <h2>Places to Explore</h2>
+        <p>Discover the character of Negombo</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="place-card">
+
+            <img src="C:\Users\ADMIN\Downloads\Morawala-Beach-Negombo.jpg">
+
+            <div class="place-content">
+                <h3>Negombo Beach</h3>
+                <p>
+                    A popular coastal space for recreation and tourism.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="place-card">
+
+            <img src="C:\Users\ADMIN\Downloads\simply-saadani-camp.jpg"
+
+            <div class="place-content">
+                <h3>Negombo Lagoon</h3>
+                <p>
+                    A significant environmental and fishing landscape.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="place-card">
+
+            <img src="C:\Users\ADMIN\Downloads\hamilton-canal-boat-trip11.jpg" 
+            alt="Dutch Canal" width="100" height="100">
+            <div class="place-content">
+                <h3>Dutch Canal</h3>
+                <p>
+                    A historic waterway connected with Negombo's heritage.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Challenges -->
+<section class="challenge">
+
+    <div class="section-title">
+        <h2>Challenges</h2>
+        <p>Understanding the issues facing Negombo</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="challenge-card">
+            <h3>🚗 Traffic</h3>
+            <p>
+                Congestion occurs around busy commercial and transport areas.
+            </p>
+        </div>
+
+        <div class="challenge-card">
+            <h3>♻️ Waste Management</h3>
+            <p>
+                Urban growth creates increasing pressure on waste management.
+            </p>
+        </div>
+
+        <div class="challenge-card">
+            <h3>🌊 Environmental Pressure</h3>
+            <p>
+                Coastal and lagoon environments face pressure from
+                development and human activities.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Future -->
+<section class="future" id="future">
+
+    <div class="section-title">
+        <h2>The Future of Negombo</h2>
+        <p>A more sustainable and liveable hometown</p>
+    </div>
+
+    <div class="future-text">
+
+        <p>
+            The future of Negombo can focus on sustainable tourism,
+            protection of the lagoon and coastal environment, improved
+            public spaces, better transportation and the protection of
+            traditional fishing communities.
+        </p>
+
+        <br>
+
+        <a href="#home" class="btn">
+            Back to Top
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+<footer>
+
+    <p>© 2026 Negombo | My Hometown</p>
+
+    <p>
+        A story of people, culture, nature and urban life.
+    </p>
+
+</footer>
+
+
+<script>
+
+    // Simple welcome message
+    window.addEventListener("load", function() {
+        console.log("Welcome to Negombo!");
+    });
+
+</script>
+
+</body>
+</html>
